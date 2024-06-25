@@ -1,0 +1,26 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: liquibase
+      changes:
+        - createTable:
+            tableName: scan_data
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: time
+                  type: double
+              - column:
+                  name: is_manually_checked
+                  type: boolean
+              - column:
+                  name: image
+                  type: jsonb
+              - column:
+                  name: predictions
+                  type: jsonb
